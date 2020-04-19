@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/next-busses-vehkapolku/static/css/main.d1b05096.chunk.css",
+    "main.js": "/next-busses-vehkapolku/static/js/main.b711f6cf.chunk.js",
+    "main.js.map": "/next-busses-vehkapolku/static/js/main.b711f6cf.chunk.js.map",
+    "runtime-main.js": "/next-busses-vehkapolku/static/js/runtime-main.af8dd0fc.js",
+    "runtime-main.js.map": "/next-busses-vehkapolku/static/js/runtime-main.af8dd0fc.js.map",
+    "static/js/2.ecab3b57.chunk.js": "/next-busses-vehkapolku/static/js/2.ecab3b57.chunk.js",
+    "static/js/2.ecab3b57.chunk.js.map": "/next-busses-vehkapolku/static/js/2.ecab3b57.chunk.js.map",
+    "index.html": "/next-busses-vehkapolku/index.html",
+    "precache-manifest.e67eaa45cd9d46e4e8140bd80a79d1dc.js": "/next-busses-vehkapolku/precache-manifest.e67eaa45cd9d46e4e8140bd80a79d1dc.js",
+    "service-worker.js": "/next-busses-vehkapolku/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/next-busses-vehkapolku/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.ecab3b57.chunk.js.LICENSE.txt": "/next-busses-vehkapolku/static/js/2.ecab3b57.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/next-busses-vehkapolku/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.af8dd0fc.js",
+    "static/js/2.ecab3b57.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.b711f6cf.chunk.js"
+  ]
+}
