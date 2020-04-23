@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { gql, useQuery } from '@apollo/client'
+import Stop from './components/Stop'
 
-function App() {
+const STOPS = gql`
+  query {
+    stops(name: "V6104") {
+      gtfsId
+      name
+      code
+      stoptimesWithoutPatterns {
+        realtimeArrival
+        serviceDay
+        headsign
+      }
+    }
+  }
+  `
+
+const App = () => {
+  let result = useQuery(STOPS)
+
+  if (result.loading) {
+    return <div>loading...</div>
+  }
+
+  if (result.error) {
+    return <div>something went wrong :(</div>
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Stop stop = {result.data.stops[0]}/>
+  )
 }
 
 export default App;
