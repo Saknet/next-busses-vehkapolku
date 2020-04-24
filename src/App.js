@@ -1,36 +1,16 @@
 import React from 'react';
-import { gql, useQuery } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 import Stop from './components/Stop'
+import STOP_V6104_QUERY from './queries'
 
-const STOPS = gql`
-  query {
-    stops(name: "V6104") {
-      gtfsId
-      name
-      code
-      stoptimesWithoutPatterns {
-        realtimeArrival
-        serviceDay
-        headsign
-      }
-    }
-  }
-  `
-
-const App = () => {
-  let result = useQuery(STOPS)
-
-  if (result.loading) {
-    return <div>loading...</div>
-  }
-
-  if (result.error) {
-    return <div>something went wrong :(</div>
-  }
-
+function App() {
+  const { loading, error, data } = useQuery(STOP_V6104_QUERY, { variables: { limit: 1 } })
+ 
+  if (loading) return 'Loading...'
+  if (error) return 'Something went wrong :('
 
   return (
-    <Stop stop = {result.data.stops[0]}/>
+    <Stop stop = {data.stops[0]}/>
   )
 }
 
