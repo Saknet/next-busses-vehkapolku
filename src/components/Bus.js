@@ -1,12 +1,10 @@
 import React from 'react';
 
-const currentTime = parseInt(new Date().getSeconds(), 10) + parseInt(new Date().getHours(), 10) * 60 * 60 + parseInt(new Date().getMinutes(), 10)  * 60;
-
-const Bus = ({ bus }) => {
+const Bus = ({ bus, time }) => {
   let secondsToArrival = 0;
 
-  if (currentTime < bus.realtimeArrival) {
-    secondsToArrival = bus.realtimeArrival - currentTime;
+  if (time < bus.realtimeArrival) {
+    secondsToArrival = bus.realtimeArrival - time;
   } else {
     // bus arriving after midnight (next day), current time is before
     secondsToArrival = bus.realtimeArrival + bus.serviceDay - Math.floor(Date.now() / 1000);

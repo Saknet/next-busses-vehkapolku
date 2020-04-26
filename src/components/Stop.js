@@ -1,13 +1,18 @@
 import React from 'react';
 import Bus from './Bus';
 
-const Stop = ({ stop }) => {
+const Stop = ({ stop, time }) => {
+  if (!stop.stoptimesWithoutPatterns) {
+    stop.stoptimesWithoutPatterns = [];
+  }
+
   return (
     <div>
       <table>
         <thead>
           <tr>
-            <td>Bus towards</td>
+            <td>Bus number</td>
+            <td>Towards</td>
             <td>Arriving in</td>
             <td>To stop</td>
           </tr>
@@ -15,8 +20,9 @@ const Stop = ({ stop }) => {
         {stop.stoptimesWithoutPatterns.map(b =>
         <tbody  key={b.headsign}>
           <tr>
+            <td>{b.trip.route.shortName}</td>
             <td>{b.headsign}</td> 
-            <td><Bus bus = {b}></Bus></td>
+            <td><Bus bus = {b} time = {time}></Bus></td>
             <td>{stop.name} {stop.code}</td>
           </tr>
         </tbody>

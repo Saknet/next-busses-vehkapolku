@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client'
+import { gql } from 'apollo-boost';
 
 const STOP_V6104_QUERY = gql`
   query {
@@ -10,6 +10,11 @@ const STOP_V6104_QUERY = gql`
         realtimeArrival
         serviceDay
         headsign
+        trip {
+        route {
+          shortName
+        }
+      }
       }
     }
   }
